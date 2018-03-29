@@ -6,10 +6,14 @@
 }
 .jumbotron .container {
   height: 350px;
+
 }
 
 .inline-header {
   display: inline-block;
   vertical-align: baseline;
   margin-right: 12px;
+}
+h1 {
+
 }
