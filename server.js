@@ -9,9 +9,10 @@ app.get('/api', controllers.api.index);
 
 app.get('/', function(req,res){
 	//res.send('Server running!!!')
+	// albumcontroller()
 	res.sendFile('views/index.html', {root : __dirname});
 });
 
-
+app.get('/api/albums', controllers.albums.index)
 ///LISTEN HERE
 app.listen(3000);
