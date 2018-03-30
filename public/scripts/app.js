@@ -38,6 +38,23 @@ $(document).ready(function() {
     success: handleSuccess,
     error: handleError
   });
+  $('#album-form').on('submit', function (event){
+  event.preventDefault();
+   var formData = $(this).serialize();
+   //console.log(formData)
+   $(this).trigger('reset');
+    $.ajax({
+      method: 'POST',
+      url: '/api/albums',
+      data: formData,
+      success: function(createdAlbum){
+        renderAlbum(createdAlbum)
+      },
+      error: function(error){
+      console.log('error')
+      } 
+   })
+  })
 });
 
 function handleSuccess (albums) {
@@ -83,3 +100,9 @@ function renderAlbum(album) {
 
   $('#albums').prepend(htmlToAppend);
 };
+
+
+
+ 
+
+

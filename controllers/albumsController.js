@@ -14,6 +14,12 @@ function index(req, res){
 
 function create(req, res){
  // create an album based on request body and send it back as JSON
+ db.Album.create(req.body, function(err, album){
+ 	if (err){
+ 		console.log('error', err);
+ 	}
+ 	res.json(album);
+ }); 
 }
 
 
